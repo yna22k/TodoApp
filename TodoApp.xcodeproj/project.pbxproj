@@ -16,6 +16,10 @@
 		C969396327C368170014C926 /* TodoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969396227C368170014C926 /* TodoAppTests.swift */; };
 		C969396D27C368170014C926 /* TodoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969396C27C368170014C926 /* TodoAppUITests.swift */; };
 		C969396F27C368170014C926 /* TodoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969396E27C368170014C926 /* TodoAppUITestsLaunchTests.swift */; };
+		C969397C27C36B2F0014C926 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C969397B27C36B2F0014C926 /* TodoViewController.swift */; };
+		C97A4E7D27C4BF6D00F11163 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C97A4E7C27C4BF6D00F11163 /* Realm */; };
+		C97A4E7F27C4BF6D00F11163 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C97A4E7E27C4BF6D00F11163 /* RealmSwift */; };
+		C97A4E8127C4C19400F11163 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A4E8027C4C19400F11163 /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,8 @@
 		C969396827C368170014C926 /* TodoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C969396C27C368170014C926 /* TodoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAppUITests.swift; sourceTree = "<group>"; };
 		C969396E27C368170014C926 /* TodoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C969397B27C36B2F0014C926 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
+		C97A4E8027C4C19400F11163 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97A4E7F27C4BF6D00F11163 /* RealmSwift in Frameworks */,
+				C97A4E7D27C4BF6D00F11163 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,10 +110,12 @@
 				C969394B27C368130014C926 /* AppDelegate.swift */,
 				C969394D27C368130014C926 /* SceneDelegate.swift */,
 				C969394F27C368130014C926 /* ViewController.swift */,
+				C969397B27C36B2F0014C926 /* TodoViewController.swift */,
 				C969395127C368130014C926 /* Main.storyboard */,
 				C969395427C368160014C926 /* Assets.xcassets */,
 				C969395627C368160014C926 /* LaunchScreen.storyboard */,
 				C969395927C368160014C926 /* Info.plist */,
+				C97A4E8027C4C19400F11163 /* Todo.swift */,
 			);
 			path = TodoApp;
 			sourceTree = "<group>";
@@ -143,6 +153,10 @@
 			dependencies = (
 			);
 			name = TodoApp;
+			packageProductDependencies = (
+				C97A4E7C27C4BF6D00F11163 /* Realm */,
+				C97A4E7E27C4BF6D00F11163 /* RealmSwift */,
+			);
 			productName = TodoApp;
 			productReference = C969394827C368130014C926 /* TodoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +229,9 @@
 				Base,
 			);
 			mainGroup = C969393F27C368130014C926;
+			packageReferences = (
+				C97A4E7B27C4BF6D00F11163 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = C969394927C368130014C926 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,9 +275,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C969397C27C36B2F0014C926 /* TodoViewController.swift in Sources */,
 				C969395027C368130014C926 /* ViewController.swift in Sources */,
 				C969394C27C368130014C926 /* AppDelegate.swift in Sources */,
 				C969394E27C368130014C926 /* SceneDelegate.swift in Sources */,
+				C97A4E8127C4C19400F11163 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +617,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C97A4E7B27C4BF6D00F11163 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C97A4E7C27C4BF6D00F11163 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C97A4E7B27C4BF6D00F11163 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		C97A4E7E27C4BF6D00F11163 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C97A4E7B27C4BF6D00F11163 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C969394027C368130014C926 /* Project object */;
 }
