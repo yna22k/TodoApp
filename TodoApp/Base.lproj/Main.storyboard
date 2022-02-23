@@ -100,17 +100,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbH-yZ-Oor">
+                                <rect key="frame" x="179" y="578" width="56" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveTodo" destination="7bZ-u2-JOC" eventType="touchUpInside" id="dSt-a7-CWt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2wa-ig-KAT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="DqE-Wu-ArO">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="GrI-Nl-rEs">
-                            <connections>
-                                <action selector="saveTodo" destination="7bZ-u2-JOC" id="uIY-lX-Oc0"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="DqE-Wu-ArO"/>
                     <connections>
                         <outlet property="deadlineTextField" destination="qLg-9R-9wg" id="EF7-de-5gy"/>
                         <outlet property="todoTextField" destination="YQd-yr-zim" id="mwc-j0-6nG"/>

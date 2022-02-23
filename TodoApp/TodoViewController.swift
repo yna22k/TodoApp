@@ -10,66 +10,38 @@ import RealmSwift
 
 class TodoViewController: UIViewController {
     
-    let realm = try! Realm()
+//    let realm = try! Realm()
     
     @IBOutlet var todoTextField: UITextField!
     @IBOutlet var todoTextView: UITextView!
     @IBOutlet var deadlineTextField: UITextField!
     
-    var titleArray = [String]()
-    var detailArray = [String]()
+    var titile: String!
+    var detail: String!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        let todo: Todo? = read()
-//        if todo != nil{
-//            todoTextField.text = todo?.todoTitle
-//            todoTextView.text = todo?.todoDetail
-//        }
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let ViewController: ViewController = segue.destination as! ViewController
-        ViewController.recieveTitleArray = self.titleArray
-        ViewController.recieveDetailArray = self.detailArray
     }
     
     
     @IBAction func saveTodo(){
+        let realm = try! Realm() // Realmをインスタンス化
+        
         let todoTitle: String = todoTextField.text!
         let todoDetail: String = todoTextView.text!
         
-        titleArray.append(todoTitle)
-        detailArray.append(todoDetail)
-        print(titleArray)
-    
-        self.navigationController?.popViewController(animated: true)
+        let todo_instance = Todo()
+        todo_instance.todoTitle = todoTitle
+        todo_instance.todoDetail = todoDetail
         
+        realm.beginWrite()
+        realm.add(todo_instance)
+        try! realm.commitWrite()
         
+//        self.navigationController?.popViewController(animated: true)
         
-        
-        
-//        let todo: Todo?  = read()
-//        if todo != nil{
-//            try! realm.write{
-//                todo!.todoTitle = todoTitle
-//                todo!.todoDetail = todoDetail
-//                }
-//            } else {
-//                let newTodo = Todo()
-//                newTodo.todoTitle = todoTitle
-//                newTodo.todoDetail = todoDetail
-//                try! realm .write{
-//                    realm.add(newTodo)
-//                }
-//            }
-//        }
-    
-        func read() -> Todo?{
-        return realm.objects(Todo.self).first
     }
     }
 
@@ -86,4 +58,4 @@ class TodoViewController: UIViewController {
     */
 
 
-}
+//}
